@@ -20,12 +20,17 @@ def calc():
     # j = request.get_json()
     # print(j['dezenas'])
     jsonData = request.get_json(force=True)
-    dezenas = jsonData['dezenas']
-    listaQuinas = jsonData['listaQuinas']
-    id_aposta = jsonData['id_aposta']
+    retorno = []
+    for r in jsonData:
+        qtdeTernos, qtdeQuadras, qtdeQuinas = 0,0,0
+        dezenas = r['dezenas']
+        listaQuinas = r['listaQuinas']
+        id_aposta = r['id_aposta']
     
-    qtdeTernos, qtdeQuadras, qtdeQuinas = contaQuinas(dezenas, listaQuinas)
-    return jsonify({'id_aposta': id_aposta, 'Ternos': qtdeTernos, 'Quadras':qtdeQuadras, 'Quinas': qtdeQuinas})
+        qtdeTernos, qtdeQuadras, qtdeQuinas = contaQuinas(dezenas, listaQuinas)
+        retorno.append({'id_aposta': id_aposta, 'Ternos': qtdeTernos, 'Quadras':qtdeQuadras, 'Quinas': qtdeQuinas})
+    print(jsonify(retorno))
+    return jsonify(retorno)
 
 def contaQuinas(dezenas, listaQuinas):
     print('Total de quinas: {}'.format(len(listaQuinas)))

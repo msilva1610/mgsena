@@ -7,9 +7,9 @@ id_aposta = 1
 
 data = {'id_aposta': id_aposta, 'dezenas': dezenas, 'listaQuinas':listaQuinas}
 
-print('Total de quinas: {}'.format(len(listaQuinas)))
+# print('Total de quinas: {}'.format(len(listaQuinas)))
 # quina = [1,2,3,7,8]
 jsonData = json.dumps(data)
 
-r = requests.post('http://localhost/calcQuinas', data = jsonData)
+r = requests.post('http://localhost:8090/calcQuinas', data = jsonData)
 print(r.json())
