@@ -16,7 +16,7 @@ def home():
 
 @app.route('/calcQuinas', methods=['POST'])
 def calc():
-    print ('is json: {}'.format(request.is_json))
+    # print ('is json: {}'.format(request.is_json))
     # j = request.get_json()
     # print(j['dezenas'])
     jsonData = request.get_json(force=True)
@@ -33,7 +33,7 @@ def calc():
     return jsonify(retorno)
 
 def contaQuinas(dezenas, listaQuinas):
-    print('Total de quinas: {}'.format(len(listaQuinas)))
+    # print('Total de quinas: {}'.format(len(listaQuinas)))
     qtde = 0
     qtdeTernos,qtdeQuadras,qtdeQuinas = 0,0,0
     for quina in listaQuinas:
