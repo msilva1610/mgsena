@@ -1,5 +1,10 @@
 # Comandos
 
+``` 
+docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
+
+```
+
 ```
 docker-compose down --rmi all
 ```
