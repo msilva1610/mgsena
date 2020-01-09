@@ -53,7 +53,7 @@ def calc01():
         id_aposta = r['id_aposta']
     
         qtdeTernos, qtdeQuadras, qtdeQuinas = contaQuinas(dezenas, listaQuinas)
-        retorno.append({'id_aposta': id_aposta, 'Ternos': qtdeTernos, 'Quadras':qtdeQuadras, 'Quinas': qtdeQuinas})
+        retorno.append({'id_aposta': id_aposta, 'dezenas': dezenas, 'Ternos': qtdeTernos, 'Quadras':qtdeQuadras, 'Quinas': qtdeQuinas})
     print(jsonify(retorno))
     return jsonify(retorno)
 
