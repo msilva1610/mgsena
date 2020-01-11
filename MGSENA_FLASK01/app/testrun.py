@@ -35,7 +35,7 @@ def multiReqs():
         # r = requests.post('http://0.0.0.0:8090/calcQuinasInt', data = jsonData)
         # r = requests.get('http://0.0.0.0:8090')
         # futures.append(pool.apply_async(requests.post,['http://localhost/calcQuinasInt'],{'data': jsonData} ))
-        futures.append(pool.apply_async(requests.get,['http://0.0.0.0:8090']))
+        futures.append(pool.apply_async(requests.get,['http://localhost:8090']))
         bar.update(i)
         # print(r.json())
     bar.finish()
@@ -59,7 +59,7 @@ def simpleReqs():
     # r = requests.post('http://localhost/calcQuinasInt', data = jsonData)
     for i in range(QtdePalpites):
         # r = requests.post('http://0.0.0.0:8090/calcQuinasInt', data = jsonData)
-        r = requests.get('http://0.0.0.0:8090')
+        r = requests.get('http://localhost:8090')
         bar.update(i)
         # print(r.json())
     bar.finish()

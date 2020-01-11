@@ -1,0 +1,101 @@
+version: "3.7"
+
+services:
+  
+  flask01:
+    build: ./app01
+    container_name: mgsena-flask01
+    restart: always
+    environment:
+      - APP_NAME=mgsena-flask
+    expose:
+      - 5091
+  
+  flask02:
+    build: ./app02
+    container_name: mgsena-flask02
+    restart: always
+    environment:
+      - APP_NAME=mgsena-flask
+    expose:
+      - 5092
+
+  flask03:
+    build: ./app03
+    container_name: mgsena-flask03
+    restart: always
+    environment:
+      - APP_NAME=mgsena-flask
+    expose:
+      - 5093
+
+  flask04:
+    build: ./app04
+    container_name: mgsena-flask04
+    restart: always
+    environment:
+      - APP_NAME=mgsena-flask
+    expose:
+      - 5094
+
+  flask05:
+    build: ./app05
+    container_name: mgsena-flask05
+    restart: always
+    environment:
+      - APP_NAME=mgsena-flask
+    expose:
+      - 5095
+
+  flask06:
+    build: ./app06
+    container_name: mgsena-flask06
+    restart: always
+    environment:
+      - APP_NAME=mgsena-flask
+    expose:
+      - 5096
+
+  flask07:
+    build: ./app07
+    container_name: mgsena-flask07
+    restart: always
+    environment:
+      - APP_NAME=mgsena-flask
+    expose:
+      - 5097
+
+  flask08:
+    build: ./app08
+    container_name: mgsena-flask08
+    restart: always
+    environment:
+      - APP_NAME=mgsena-flask
+    expose:
+      - 5098
+
+  flask09:
+    build: ./app09
+    container_name: mgsena-flask09
+    restart: always
+    environment:
+      - APP_NAME=mgsena-flask
+    expose:
+      - 5099
+
+  nginx:
+    build: ./nginx
+    container_name: mgsena-nginx
+    restart: always
+    ports:
+      - "80:80"
+    depends_on: 
+      - flask01
+      - flask02
+      - flask03
+      - flask04
+      - flask05
+      - flask06
+      - flask07
+      - flask08
+      - flask09
